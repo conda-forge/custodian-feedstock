@@ -123,4 +123,6 @@ Feedstock Maintainers
 =====================
 
 * [@jan-janssen](https://github.com/jan-janssen/)
+* [@mkhorton](https://github.com/mkhorton/)
+* [@shyuep](https://github.com/shyuep/)
 
