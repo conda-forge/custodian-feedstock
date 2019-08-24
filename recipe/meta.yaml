@@ -1,5 +1,5 @@
 {% set name = "custodian" %}
-{% set version = "2019.8.23" %}
+{% set version = "2019.8.24" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b4e3ffda2230e65b82a786018e4abbfcfe1a25b41191a6d6967631b2be3d92ce
+  sha256: 562e4621420d322bad57577d8a11847fbfcf0554bc4d8cb52dfcc1631e0b1e3a
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
   entry_points:
     - cstdn = custodian.cli.cstdn:main
