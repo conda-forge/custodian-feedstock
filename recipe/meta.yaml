@@ -1,5 +1,5 @@
 {% set name = "custodian" %}
-{% set version = "2019.9.23" %}
+{% set version = "2020.4.27" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ba1ebb17c524fb502f42382d363d2f20ea09eef63ccabea810a4c31349bd7d89
+  sha256: 6ad59cae307e0827b73b3132271ff9776856a307fbc62aec734bb0292af159ec
 
 build:
   noarch: python
-  number: 1
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - cstdn = custodian.cli.cstdn:main
     - run_vasp = custodian.cli.run_vasp:main
@@ -43,7 +43,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'A simple, robust and flexible just-in-time job management framework in Python.'
+  summary: A simple, robust and flexible just-in-time job management framework in Python.
 
   description: |
     Custodian is a simple, robust and flexible just-in-time (JIT) job 
