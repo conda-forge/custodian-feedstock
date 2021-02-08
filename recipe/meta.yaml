@@ -1,5 +1,5 @@
 {% set name = "custodian" %}
-{% set version = "2021.1.8" %}
+{% set version = "2021.2.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 271a5e10234b935cf67ad9cd650ec014f8fcb5528649678bd24fe2af2909125e
+  sha256: cd0f781e0742bb5e8530266ac61348444afabc7aed09de2d41d9c9de82dfe00c
 
 build:
   noarch: python
