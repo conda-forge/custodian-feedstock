@@ -1,11 +1,11 @@
-About custodian
-===============
+About custodian-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/custodian-feedstock/blob/main/LICENSE.txt)
 
 Home: https://materialsproject.github.io/custodian
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/custodian-feedstock/blob/main/LICENSE.txt)
 
 Summary: A simple, robust and flexible just-in-time job management framework in Python.
 
