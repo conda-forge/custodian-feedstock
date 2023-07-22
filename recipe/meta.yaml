@@ -30,6 +30,7 @@ requirements:
     - sentry-sdk
     - ruamel.yaml >=0.15.6
     - monty >=0.9.0
+    - psutil
 
 test:
   imports:
