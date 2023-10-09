@@ -43,6 +43,7 @@ test:
     - converge_geometry --help
   requires:
     - pip
+    - pymatgen
 
 about:
   home: https://github.com/materialsproject/custodian
