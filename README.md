@@ -3,23 +3,13 @@ About custodian-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/custodian-feedstock/blob/main/LICENSE.txt)
 
-Home: https://materialsproject.github.io/custodian
+Home: https://github.com/materialsproject/custodian
 
 Package license: MIT
 
-Summary: A simple, robust and flexible just-in-time job management framework in Python.
+Summary: A simple JIT job management framework in Python.
 
-Development: https://github.com/materialsproject/custodian
-
-Documentation: https://materialsproject.github.io/custodian
-
-Custodian is a simple, robust and flexible just-in-time (JIT) job
-management framework written in Python. Using custodian, you can
-create wrappers that perform error checking, job management and
-error recovery. It has a simple plugin framework that allows you
-to develop specific job management workflows for different
-applications.
-
+Documentation: https://pythonhosted.org/custodian/
 
 Current build status
 ====================
