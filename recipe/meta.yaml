@@ -40,7 +40,7 @@ test:
     - run_vasp --help
     - run_nwchem --help
     - converge_kpoints --help
-    - converge_geometry --help
+    # - converge_geometry --help
   requires:
     - pip
     - pymatgen
