@@ -18,7 +18,7 @@ build:
     - converge_geometry = custodian.cli.converge_geometry:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
