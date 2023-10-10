@@ -6,19 +6,19 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/custodian-{{ version }}.tar.gz
   sha256: 7667fc658b934c445a2f3818c2fe4b773a429dbc928c447efc01b2348e1f64ef
 
 build:
-  noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - cstdn = custodian.cli.cstdn:main
     - run_vasp = custodian.cli.run_vasp:main
     - run_nwchem = custodian.cli.run_nwchem:main
     - converge_kpoints = custodian.cli.converge_kpoints:main
     - converge_geometry = custodian.cli.converge_geometry:main
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
@@ -26,10 +26,9 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - pip
-    - sentry-sdk
+    - monty >=2.0.6
     - ruamel.yaml >=0.15.6
-    - monty >=0.9.0
+    - sentry-sdk >=0.8.0
     - psutil
 
 test:
@@ -37,23 +36,21 @@ test:
     - custodian
   commands:
     - pip check
+    - cstdn --help
+    - run_vasp --help
+    - run_nwchem --help
+    - converge_kpoints --help
+    # - converge_geometry --help
+  requires:
+    - pip
+    - pymatgen
 
 about:
-  home: https://materialsproject.github.io/custodian
+  home: https://github.com/materialsproject/custodian
+  summary: A simple JIT job management framework in Python.
+  doc_url: https://pythonhosted.org/custodian/
   license: MIT
-  license_family: MIT
   license_file: LICENSE
-  summary: A simple, robust and flexible just-in-time job management framework in Python.
-
-  description: |
-    Custodian is a simple, robust and flexible just-in-time (JIT) job 
-    management framework written in Python. Using custodian, you can 
-    create wrappers that perform error checking, job management and 
-    error recovery. It has a simple plugin framework that allows you 
-    to develop specific job management workflows for different 
-    applications.
-  doc_url: https://materialsproject.github.io/custodian
-  dev_url: https://github.com/materialsproject/custodian
 
 extra:
   recipe-maintainers:
