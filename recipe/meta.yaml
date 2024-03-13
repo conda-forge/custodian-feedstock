@@ -1,5 +1,5 @@
 {% set name = "custodian" %}
-{% set version = "2024.2.15" %}
+{% set version = "2024.3.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/custodian-{{ version }}.tar.gz
-  sha256: 9b8fb244582ee5b322165f1d67cec192912cdc11927db75b5e590f15a6a8349d
+  sha256: e57ff300d21ff63a08b63be6b8e1b1d5175178a2f77ac8666ffdf63c2d83808e
 
 build:
   entry_points:
