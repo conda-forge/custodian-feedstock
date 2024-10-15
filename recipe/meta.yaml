@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/custodian-{{ version }}.tar.gz
+  url: https://github.com/materialsproject/custodian/archive/v{{ version }}.tar.gz
   sha256: 78d8901fdbb3b48b0c30f56adee11875847e8d1988a68098c031b0a32c762ce8
 
 build:
