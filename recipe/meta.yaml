@@ -1,5 +1,5 @@
 {% set name = "custodian" %}
-{% set version = "2024.10.14" %}
+{% set version = "2024.10.15" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/materialsproject/custodian/archive/v{{ version }}.tar.gz
-  sha256: 55d005ad687c9d25ad5c34701fb1ae8e2182183d1064ee7f1bf32e97c06d9129
+  sha256: 957aee2ee533ef1e5bb2098ffc780a5ee422c6bb98b3230f99ff0da334f04e1b
   patches:
     - install.patch
 
