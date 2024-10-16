@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/materialsproject/custodian/archive/v{{ version }}.tar.gz
   sha256: 957aee2ee533ef1e5bb2098ffc780a5ee422c6bb98b3230f99ff0da334f04e1b
-  patches:
-    - install.patch
 
 build:
   entry_points:
