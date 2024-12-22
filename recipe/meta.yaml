@@ -18,15 +18,15 @@ build:
     - converge_geometry = custodian.cli.converge_geometry:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - monty >=2.0.6
     - ruamel.yaml >=0.15.6
     - sentry-sdk >=0.8.0
@@ -45,6 +45,7 @@ test:
   requires:
     - pip
     - pymatgen
+    - python {{ python_min }}
 
 about:
   home: https://github.com/materialsproject/custodian
