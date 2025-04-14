@@ -1,5 +1,5 @@
 {% set name = "custodian" %}
-{% set version = "2024.10.16" %}
+{% set version = "2025.4.14" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/materialsproject/custodian/archive/v{{ version }}.tar.gz
-  sha256: 944ff430fed78cd3d10f4f533c4bd7f76a01d12f1a425f397166334d8e1ccbbd
+  sha256: 49bfd840f1eb4fc0cda9a4637cbaeaf0fcb427b6fc7d95b173657d571388efcd
 
 build:
   entry_points:
@@ -19,7 +19,7 @@ build:
     - converge_geometry = custodian.cli.converge_geometry:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
