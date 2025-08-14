@@ -1,5 +1,5 @@
 {% set name = "custodian" %}
-{% set version = "2025.5.12" %}
+{% set version = "2025.8.13" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/materialsproject/custodian/archive/v{{ version }}.tar.gz
-  sha256: 8abcef3bb4bb92fcaf90ae3c8a24600ee295cb9a1312cf57e9f5ed8325a5250c
+  sha256: 5a0becf38e2666374ae09163a58a1d1822ad04e3c99e52135c368d54505c4245
 
 build:
   entry_points:
