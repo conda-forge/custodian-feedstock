@@ -1,0 +1,67 @@
+schema_version: 1
+
+context:
+  name: custodian
+  version: 2025.12.14
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/materialsproject/custodian/archive/v${{ version }}.tar.gz
+  sha256: 04e948a57d8df9fc8394df3c827b71cf76c3c7648fe308ab1ef2847344160c75
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - cstdn = custodian.cli.cstdn:main
+      - run_vasp = custodian.cli.run_vasp:main
+      - run_nwchem = custodian.cli.run_nwchem:main
+      - converge_kpoints = custodian.cli.converge_kpoints:main
+      - converge_geometry = custodian.cli.converge_geometry:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - monty >=2.0.6
+    - ruamel.yaml >=0.15.6
+    - sentry-sdk >=0.8.0
+    - psutil
+
+tests:
+  - python:
+      imports:
+        - custodian
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - pip
+        - pymatgen
+        - python ${{ python_min }}.*
+    script:
+      - cstdn --help
+      - run_vasp --help
+      - run_nwchem --help
+      - converge_kpoints --help
+
+about:
+  summary: A simple JIT job management framework in Python.
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/materialsproject/custodian
+  documentation: https://pythonhosted.org/custodian/
+
+extra:
+  recipe-maintainers:
+    - shyuep
+    - mkhorton
+    - jan-janssen
