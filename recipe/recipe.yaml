@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: custodian
-  version: 2025.12.14
+  version: 2026.10.9
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://github.com/materialsproject/custodian/archive/v${{ version }}.tar.gz
-  sha256: 04e948a57d8df9fc8394df3c827b71cf76c3c7648fe308ab1ef2847344160c75
+  sha256: 72baa79b96583ba3018999c6fc2147162daac9db7db6b0fdf69f52666b65fc3c
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -33,9 +33,7 @@ requirements:
     - python >=${{ python_min }}
     - monty >=2.0.6
     - ruamel.yaml >=0.15.6
-    - sentry-sdk >=0.8.0
     - psutil
-
 tests:
   - python:
       imports:
