@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: custodian
-  version: 2026.10.9
+  version: "2026.10.11"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/materialsproject/custodian/archive/v${{ version }}.tar.gz
-  sha256: 72baa79b96583ba3018999c6fc2147162daac9db7db6b0fdf69f52666b65fc3c
+  sha256: c631b0f714e8836cbc01c141f5f9b03f0d02695f60ad7c5af66306ce3ebab7a4
 
 build:
   number: 0
